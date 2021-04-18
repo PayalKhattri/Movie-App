@@ -12,7 +12,6 @@ app.get('/dummy',(req,res)=>{
 })
 
 app.get('/',(req,res)=>{
-   // res.send('Home Page')
    res.render('home')
 })
 
