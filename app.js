@@ -1,6 +1,8 @@
 const express=require('express')
 const request=require('request')
 const app=express()
+const dotenv=require('dotenv')
+dotenv.config()
 //middlewares
 //ejs templating language
 app.set("view engine","ejs")
@@ -21,6 +23,7 @@ app.get('/about',(req,res)=>{
 
 app.get('/result',(req,res)=>{
     //res.send(`You searched for ${req.query.movieName}`)
+    //const url=`http://www.omdbapi.com/?apikey={process.env.API_KEY}&s=${req.query.movieName}`
     const url=`http://www.omdbapi.com/?apikey=ff73c474&s=${req.query.movieName}`
     request(url,function(error,response,body){
         if(!error && response.statusCode===200){
