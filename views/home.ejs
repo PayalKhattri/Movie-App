@@ -1,8 +1,23 @@
 <%- include("./partials/header") %>
+<link type="text/css" rel="stylesheet" href="/public/css/index.css" >
+
+<div class="container vertical-center">
+  <label for="basic-url" style="font-weight: bold; font-size: larger;">Enter the Movie's Name</label>
+<div class="input-group mb-3" >
+  <div class="input-group mb-3">
+    <form class="input-group mb-3" method="get" action="result">
+    <input type="search" class="form-control" placeholder="Movie's name" aria-label="Recipient's username" aria-describedby="button-addon2" aria-label="Search" name="movieName">
+    <div class="input-group-append">
+      <button class="btn btn-dark" type="submit" >Search</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
 
 
-
-    <div class="container">
+    <!-- <div class="container">
           <div class="jumbotron">
             <h1 class="display-4">Movie App!</h1>
             <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -10,7 +25,7 @@
             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
             <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
           </div>
-      </div>
+      </div> -->
     
     
 <%- include("./partials/footer") %>

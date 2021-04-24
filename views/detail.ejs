@@ -7,28 +7,71 @@
       </div>
 <%}%>
 
+
+
+
+  
+
+
    
     <!--Card-->
-  <div class="card flex-row flex-wrap">
-    <div class="card-header border-0">
-      <img src="<%=data.Poster%>" alt="Poster" />
-    </div>
+ <div class="card shadow p-3 mb-5 bg-white rounded text-center">
+   
+     
+      <img src="<%=data.Poster%>" alt="Poster" class="rounded mx-auto d-block shadow-lg p-3 mb-5 bg-white rounded"/>
+  
 
-
-    <div class="card-block px-2">
-      <h4 class="card-title"><%=data.Title%></h4>
-      <p class="card-text"><%=data.Plot%></p>
-      <p class="card-text">Actors: <%=data.Actors%></p>
+    <div class="card-body">
+      <h2 class="card-title"><%=data.Title%></h2>
+      <%if(data.Plot!="N/A"){%>
+      <p class="card-text"><b><%=data.Plot%></b></p>
+      <%}%>
+      <!-- <p class="card-text">Actors: <%=data.Actors%></p> -->
+      <br/>
     </div>
-    <div class="w-100">
+    <!-- <div class="w-100">
         <ul>
             <%data['Ratings'].forEach(function(rating){%>
             
             <li><%=rating.Source %> - <%=rating.Value%></li>
             <%})%>
         </ul>
-    </div>
+    </div> -->
+   
+    <!-- <div class="card " style="width: 18rem;"> -->
+    <ul class="list-group list-group-flush">
+    <%if(data.Genre!="N/A"){%>
+    <li class="list-group-item"><b>Genre:</b> <%=data.Genre%></li>
+    <%}%>
+    <%if(data.Director!="N/A"){%>
+    <li class="list-group-item"><b>Director:</b> <%=data.Director%></li>
+    <%}%>
+    <%if(data.Writer!="N/A"){%>
+    <li class="list-group-item"><b>Writer:</b> <%=data.Writer%></li>
+    <%}%>
+    <%if(data.Actors!="N/A"){%>
+    <li class="list-group-item"><b>Actors:</b> <%=data.Actors%></li>
+    <%}%>
+    <%if(data.Language!="N/A"){%>
+    <li class="list-group-item"><b>Language:</b> <%=data.Language%></li>
+    <%}%>
+    <%if(data.Awards!="N/A"){%>
+    <li class="list-group-item"><b>Awards:</b> <%=data.Awards%></li>
+    <%}%>
+     <%data['Ratings'].forEach(function(rating){%>
+     <%if(rating.Value!="N/A" && rating.Source!="N/A"){%>
+    <li class="list-group-item"><%=rating.Source %> - <%=rating.Value%></li>
+    <%}%>
+    <%})%>
+    
+  
+  </ul>
+
+  <!-- </div> -->
+  <%if(data.BoxOffice!="N/A"){%>
+  
     <div class="card-footer w-100 text-muted">Box Office: <%=data.BoxOffice%></div>
+    <%}%>
   </div>
-</div>
+</div> 
 <%- include("./partials/footer")%>
